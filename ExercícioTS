@@ -1,0 +1,166 @@
+1:
+TypeScript Introduction
+
+TypeScript allows developers to add types to JavaScript.
+
+2:
+JavaScript is a 
+loosely typed language.
+
+3:
+TypeScript Get Started
+tsconfig.json
+
+4:
+TypeScript Simple Types
+Explicit
+Implicit
+
+5:
+let firstName = "Dylan";
+
+6:
+let firstName: string = "Dylan";
+
+7:
+TypeScipt Special Types
+let myVar: any;
+
+8:
+let myVar: unknown;
+
+9:
+TypeScript Arrays
+const names: readonly string[] = ["Dylan"];
+
+10:
+Typescript tuple
+False
+
+11:
+let ourTuple: [string, boolean];
+
+12:
+Typescript object types
+const car: { type: string , model: string , year: number } = 
+{ type: "Toyota",
+ model: "Corolla", 
+year: 2009 };
+
+13:
+const car: { type: string, model?: string } = { 
+type: "Toyota" };
+
+14:
+Typescript enums
+enum myEnum {
+myFirstConst,
+mySecondConst
+};
+
+15:
+
+enum myEnum {
+myFirstConst = "first",
+mySecondConst = "second"
+};
+
+16:
+Typescript Aliases & Interface
+type carType = string
+
+17:
+interface myInterface {
+myProp: string
+}
+18:
+interface MyExtInterface extends myInterface {
+myExtProp: number 
+}
+
+19:
+Typescript Union types
+function myFunc(myVar: string | number) {
+console.log(myVar)
+}
+
+20:
+Typescript functions
+function myFunc(): string { 
+return "Learning is Fun!":
+
+}
+
+21:
+function myFunc(): void {
+console.log("Learning is Fun!");
+
+}
+22:
+function myFunc(myVar1: string, myVar2: string) {
+return(myVar1 + myVar2);
+
+}
+23:
+function myFunc(myVar1: string, myVar2?: string) {
+return(myVar1 + (myVar2 | | ""));
+}
+
+24:
+Typescript casting
+let myVar: unknown = "Hello world!";
+console.log((myVar as string).length);
+
+25:
+let myVar: unknown = "Hello world!";
+console.log((<string>myVar).length);
+
+26:
+Typescript classes
+class Person {
+ private name: string;
+
+ public constructor(name: string) {
+  this.name = name;
+ }
+
+ 
+public getName(): string {
+  return this.name;
+ }
+}
+
+27: 
+Typescript Basic generics
+function createPair<typeX, typeY> (x: typeX, y: typeY): [typeX, typeY] {
+ return [x, y];
+}
+
+console.log(createPair<string, number>('Meaning', 42));
+
+28:
+Typescript utility types
+
+interface Person { 
+age: number; 
+firstName: string; 
+lastName: string; 
+}
+ let kindPerson: Partial<Person> = { };
+
+29:
+interface Person { 
+age: number; 
+firstName: string; 
+lastName?: string; 
+} 
+let kindPerson: Required<Person> ={
+ age: 1800,
+ firstName: "Santa", 
+lastName: "Claus"
+
+ };
+
+30:
+Record<string, number> is equivalent to { [key: string]: number }
+
